@@ -41,6 +41,9 @@ html{
     bottom: 0;
     z-index: -1;
     mix-blend-mode:overlay;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 
@@ -205,6 +208,9 @@ header ul a:hover{
 .blackhole-box video{
     width: 100%;
     margin-top: -23.5%;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 .hero{
@@ -285,6 +291,9 @@ header ul a:hover{
 .skills-video{
     height: 900px;
     mix-blend-mode:lighten;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
 }
 
 
@@ -728,31 +737,54 @@ header ul a:hover{
     gap: 10%;
     align-items: center;
     position: relative;
+    flex-wrap: wrap;
 }
 
 .contact-section h1{
     position: absolute;
     top: 10%;
-    left: 40%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .social-box {
     display: flex;
     flex-direction: column;
     gap: 25px;
+    margin-top: 100px;
 }
 
-.social-box a{
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     color: lightgray;
     text-decoration: none;
-    font-size: 20px;
-    overflow-wrap: anywhere;
+    font-size: 16px;
+    word-break: break-all;
+}
+
+.social-box a {
+    color: lightgray;
+    text-decoration: none;
+}
+
+.social-box a .social-item {
+    color: lightgray;
+}
+
+.social-box a:hover .social-item {
+    color: #72a1de;
 }
 
 .social-box i{
     color: #7668ff;
     font-size: 30px;
-    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.social-box a i {
+    color: #7668ff;
 }
 
 .social-icons a i{
@@ -998,314 +1030,27 @@ header ul a:hover{
     }
 
     .hero-info h1{
-        font-size: 40px;
-        line-height: 50px;
+        font-size: 36px;
     }
-
-    .skills-video{
-        height: 800px;
-    }
-
-    .project-card{
-        flex-direction: column;
-        height: 100%;
-        gap: 5%;
-    }
-
-    .project-vidbox{
-        width: 100%;
-    }
-
-    .project-info{
-        width: 100%;
-        padding-left: 0;
-    }
-
-}
-
-@media screen and (max-width: 900px){
-    header{
-        padding: 0 15px;
-    }
-
-    .left img{
-        width: 35px;
-        height: 35px;
-        margin: 0 10px;
-    }
-
-    .left h2{
-        font-size: 18px;
-    }
-
-    header ul{
-        width: min(550px, 60%);
-        padding: 10px 10px;
-        gap: 5px;
-    }
-
-    header ul a{
-        margin: 0 5px;
-        font-size: 13px;
-    }
-
-    .box-icons{
-        gap: 10px;
-    }
-
-    .box-icons p{
-        font-size: 16px;
-        width: 25px;
-        height: 25px;
-    }
-
-    .hero{
-        height: 80vh;
-        margin-top: 70px;
-    }
-
-    .hero-info h1{
-        font-size: 32px;
-        line-height: 40px;
-        max-width: 400px;
-    }
-
-    .hero-info p{
-        max-width: 350px;
-        font-size: 14px;
-    }
-
-    .skills-video{
+    
+    .skills-video {
         height: 600px;
     }
-
-    .info-cards{
-        grid-template-columns: auto auto;
-        gap: 15px;
-    }
-
-    .card:nth-child(3){
-        grid-row: span 1;
-        height: 40vh;
-    }
-
-    .card:nth-child(4){
-        grid-column: span 2;
-    }
-
-    .my-project{
-        width: 90%;
-        margin-bottom: 500px;
-    }
-
-    .project-vidbox{
-        min-width: 300px;
-    }
-
-    .project-info h1{
-        font-size: 20px;
-        max-width: 350px;
-    }
-
-    .project-info p{
-        max-width: 350px;
-        min-width: 250px;
-        font-size: 13px;
-    }
-
-    .project-info button{
-        padding: 12px 25px;
-        font-size: 13px;
-    }
-
-    .blog-grid{
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 15px;
-    }
-
-    .contact-section{
-        width: 90%;
-        flex-direction: column;
-        gap: 5%;
-    }
-
-    .contact-section h1{
-        left: 20%;
-    }
-
-    .social-box{
-        gap: 15px;
-        font-size: 16px;
-    }
-
-    .contact-box p{
-        font-size: 14px;
-    }
-
-    .contact-box input{
-        width: 90%;
-        height: 30px;
-    }
-
-    .menu-icon{
-        display: block;
-    }
-
-    header ul{
-        display: none;
-    }
-
+    
 }
 
-@media screen and (max-width: 600px){
-    header{
-        padding: 0 10px;
-        justify-content: space-between;
-        gap: 10px;
+/* iOS Video Fix */
+@supports (aspect-ratio: 1) {
+    video {
+        -webkit-appearance: none;
+        appearance: none;
     }
+}
 
-    .left img{
-        width: 30px;
-        height: 30px;
-        margin: 0 8px;
-    }
-
-    .left h2{
-        font-size: 14px;
-    }
-
-    .left{
-        gap: 5px;
-    }
-
-    .box-icons{
-        gap: 8px;
-    }
-
-    .box-icons p{
-        font-size: 14px;
-        width: 22px;
-        height: 22px;
-    }
-
-    .hero{
-        margin-top: 70px;
-        height: 70vh;
-    }
-
-    .hero-info{
-        left: 3%;
-    }
-
-    .hero-info h1{
-        font-size: 24px;
-        line-height: 30px;
-        max-width: 280px;
-        margin-top: 20px;
-        margin-bottom: 15px;
-    }
-
-    .hero-info p{
-        max-width: 280px;
-        font-size: 12px;
-        margin-bottom: 20px;
-    }
-
-    .hero-info button{
-        padding: 10px 20px;
-        font-size: 12px;
-    }
-
-    .skills-video-box{
-        display: none;
-    }
-
-    .skills-video{
-        height: 400px;
-    }
-
-    .info-cards{
-        grid-template-columns: auto;
-        gap: 10px;
-    }
-
-    .card:nth-child(3){
-        grid-row: span 1;
-        height: 40vh;
-    }
-
-    .card:nth-child(4){
-        grid-column: span 1;
-    }
-
-    .info-section{
-        width: 90%;
-    }
-
-    .my-project{
-        width: 95%;
-        gap: 5%;
-        margin-bottom: 400px;
-    }
-
-    .project-vidbox{
-        min-width: 100%;
-        width: 100%;
-    }
-
-    .project-info h1{
-        font-size: 16px;
-        max-width: 100%;
-    }
-
-    .project-info p{
-        max-width: 100%;
-        min-width: 100%;
-        font-size: 12px;
-    }
-
-    .project-info button{
-        padding: 10px 20px;
-        font-size: 12px;
-    }
-
-    .blog-grid{
-        grid-template-columns: auto;
-        gap: 10px;
-    }
-
-    .contact-section{
-        width: 95%;
-    }
-
-    .contact-section h1{
-        font-size: 20px;
-        left: 5%;
-    }
-
-    .social-box{
-        gap: 10px;
-        font-size: 14px;
-    }
-
-    .social-box a{
-        font-size: 13px;
-    }
-
-    .social-box i{
-        font-size: 20px;
-    }
-
-    .contact-box p{
-        font-size: 12px;
-    }
-
-    .contact-box input{
-        width: 100%;
-    }
-
-    .contact-box button{
-        padding: 10px 20px;
-        font-size: 12px;
+@media (hover: none) and (pointer: coarse) {
+    video {
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
     }
 }
