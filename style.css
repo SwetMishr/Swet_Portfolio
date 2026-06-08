@@ -105,8 +105,9 @@ header ul a:hover{
 
 .box-icons{
     display: flex;
-    gap: 40px;
+    gap: 15px;
     flex-shrink: 0;
+    order: 3;
 }
 
 .box-icons a{
@@ -998,36 +999,21 @@ header ul a:hover{
 
     .hero-info h1{
         font-size: 40px;
-        max-width: 400px;
-        line-height: 40px;
+        line-height: 50px;
     }
 
-    .hero-info p{
-        max-width: 450px;
-    }
-
-    .info-cards{
-        grid-template-columns: auto auto;
-    }
-
-    .card:nth-child(3){
-        grid-row: span 1;
-        grid-column: span 2;
-        height: 40vh;
-    }
-
-    .card:nth-child(4){
-        grid-column: span 2;
+    .skills-video{
+        height: 800px;
     }
 
     .project-card{
         flex-direction: column;
+        height: 100%;
         gap: 5%;
     }
 
     .project-vidbox{
         width: 100%;
-        min-width: unset;
     }
 
     .project-info{
@@ -1035,26 +1021,11 @@ header ul a:hover{
         padding-left: 0;
     }
 
-    .skills-box{
-        flex-direction: column;
-        height: auto;
-    }
-
-    .Designer,
-    .coder{
-        position: relative;
-        top: unset;
-        left: unset;
-        right: unset;
-        margin: 30px 0;
-    }
-
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 900px){
     header{
         padding: 0 15px;
-        height: 60px;
     }
 
     .left img{
@@ -1063,215 +1034,278 @@ header ul a:hover{
         margin: 0 10px;
     }
 
+    .left h2{
+        font-size: 18px;
+    }
+
     header ul{
-        display: none;
+        width: min(550px, 60%);
+        padding: 10px 10px;
+        gap: 5px;
+    }
+
+    header ul a{
+        margin: 0 5px;
+        font-size: 13px;
     }
 
     .box-icons{
-        gap: 20px;
+        gap: 10px;
     }
 
-    .menu-icon{
-        display: flex;
+    .box-icons p{
+        font-size: 16px;
+        width: 25px;
+        height: 25px;
     }
 
     .hero{
         height: 80vh;
-        padding-top: 60px;
-    }
-
-    .hero-info{
-        left: 0;
-        right: 0;
-        width: 100%;
-        padding: 0 20px;
-        text-align: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        margin-top: 70px;
     }
 
     .hero-info h1{
-        font-size: 28px;
-        max-width: 100%;
-        line-height: 35px;
+        font-size: 32px;
+        line-height: 40px;
+        max-width: 400px;
     }
 
     .hero-info p{
-        max-width: 100%;
+        max-width: 350px;
         font-size: 14px;
     }
 
-    .skills-video-box{
-        position: relative;
-        right: unset;
-        width: 100%;
-    }
-
     .skills-video{
-        height: auto;
-        width: 100%;
-        max-width: 500px;
-    }
-
-    .scroll-down{
-        display: none;
+        height: 600px;
     }
 
     .info-cards{
-        grid-template-columns: 1fr;
-    }
-
-    .card{
-        height: 30vh;
+        grid-template-columns: auto auto;
+        gap: 15px;
     }
 
     .card:nth-child(3){
-        grid-column: unset;
-        height: 30vh;
+        grid-row: span 1;
+        height: 40vh;
     }
 
     .card:nth-child(4){
-        grid-column: unset;
+        grid-column: span 2;
     }
 
     .my-project{
         width: 90%;
-        margin-bottom: 300px;
-    }
-
-    .project-card{
-        gap: 0;
+        margin-bottom: 500px;
     }
 
     .project-vidbox{
-        min-width: 100%;
-    }
-
-    .project-vidbox video{
-        width: 100%;
+        min-width: 300px;
     }
 
     .project-info h1{
-        font-size: 18px;
+        font-size: 20px;
+        max-width: 350px;
     }
 
     .project-info p{
-        max-width: 100%;
-        min-width: 100%;
+        max-width: 350px;
+        min-width: 250px;
+        font-size: 13px;
     }
 
-    .contact-section{
-        flex-direction: column;
-        width: 90%;
-        gap: 40px;
-    }
-
-    .contact-section h1{
-        position: relative;
-        top: unset;
-        left: unset;
-        margin-bottom: 20px;
-    }
-
-    .social-box{
-        width: 100%;
-    }
-
-    .social-box a{
-        font-size: 16px;
-    }
-
-    .contact-box input{
-        width: 100%;
+    .project-info button{
+        padding: 12px 25px;
+        font-size: 13px;
     }
 
     .blog-grid{
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
     }
 
-    .blog-card{
-        min-height: auto;
+    .contact-section{
+        width: 90%;
+        flex-direction: column;
+        gap: 5%;
+    }
+
+    .contact-section h1{
+        left: 20%;
+    }
+
+    .social-box{
+        gap: 15px;
+        font-size: 16px;
+    }
+
+    .contact-box p{
+        font-size: 14px;
+    }
+
+    .contact-box input{
+        width: 90%;
+        height: 30px;
+    }
+
+    .menu-icon{
+        display: block;
+    }
+
+    header ul{
+        display: none;
     }
 
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 600px){
     header{
         padding: 0 10px;
+        justify-content: space-between;
+        gap: 10px;
     }
 
     .left img{
         width: 30px;
         height: 30px;
+        margin: 0 8px;
     }
 
     .left h2{
-        font-size: 16px;
+        font-size: 14px;
+    }
+
+    .left{
+        gap: 5px;
+    }
+
+    .box-icons{
+        gap: 8px;
     }
 
     .box-icons p{
-        font-size: 16px;
-        width: 28px;
-        height: 28px;
+        font-size: 14px;
+        width: 22px;
+        height: 22px;
     }
 
-    .hero-info .hero-info-title{
-        width: 100%;
-        font-size: 12px;
+    .hero{
+        margin-top: 70px;
+        height: 70vh;
+    }
+
+    .hero-info{
+        left: 3%;
     }
 
     .hero-info h1{
         font-size: 24px;
         line-height: 30px;
+        max-width: 280px;
+        margin-top: 20px;
+        margin-bottom: 15px;
     }
 
     .hero-info p{
+        max-width: 280px;
         font-size: 12px;
-        line-height: 20px;
+        margin-bottom: 20px;
     }
 
     .hero-info button{
         padding: 10px 20px;
-        font-size: 14px;
+        font-size: 12px;
+    }
+
+    .skills-video-box{
+        display: none;
+    }
+
+    .skills-video{
+        height: 400px;
+    }
+
+    .info-cards{
+        grid-template-columns: auto;
+        gap: 10px;
+    }
+
+    .card:nth-child(3){
+        grid-row: span 1;
+        height: 40vh;
+    }
+
+    .card:nth-child(4){
+        grid-column: span 1;
+    }
+
+    .info-section{
+        width: 90%;
     }
 
     .my-project{
         width: 95%;
         gap: 5%;
-        margin-bottom: 200px;
+        margin-bottom: 400px;
+    }
+
+    .project-vidbox{
+        min-width: 100%;
+        width: 100%;
     }
 
     .project-info h1{
         font-size: 16px;
+        max-width: 100%;
+    }
+
+    .project-info p{
+        max-width: 100%;
+        min-width: 100%;
+        font-size: 12px;
     }
 
     .project-info button{
         padding: 10px 20px;
+        font-size: 12px;
+    }
+
+    .blog-grid{
+        grid-template-columns: auto;
+        gap: 10px;
+    }
+
+    .contact-section{
+        width: 95%;
+    }
+
+    .contact-section h1{
+        font-size: 20px;
+        left: 5%;
+    }
+
+    .social-box{
+        gap: 10px;
         font-size: 14px;
     }
 
-    .Designer h1,
-    .coder h1{
-        font-size: 32px;
+    .social-box a{
+        font-size: 13px;
     }
 
-    .Designer p,
-    .coder p{
+    .social-box i{
+        font-size: 20px;
+    }
+
+    .contact-box p{
         font-size: 12px;
     }
 
     .contact-box input{
-        height: 35px;
+        width: 100%;
     }
 
     .contact-box button{
         padding: 10px 20px;
-    }
-
-    .footer h6{
         font-size: 12px;
     }
-
 }
